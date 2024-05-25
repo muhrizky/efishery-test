@@ -1,3 +1,4 @@
+import functools
 import json
 import jwt
 import logging
@@ -12,6 +13,43 @@ JWT_ALGORITHM = 'HS256'
 JWT_EXP_DELTA_SECONDS = 3600
 
 active_tokens = {}
+
+
+def invalid_response(error_code, error_message, status_code):
+    return http.Response(
+        json.dumps({'error': error_code, 'message': error_message}),
+        headers={'Content-Type': 'application/json'},
+        status=status_code
+    )
+
+
+def validate_token(func):
+    """Decorator to validate JWT token in the request header."""
+
+    @functools.wraps(func)
+    def wrap(self, *args, **kwargs):
+        """Wrap the function to validate the token."""
+        access_token = request.httprequest.headers.get("token")
+        if not access_token:
+            return invalid_response("access_token_not_found", "Missing access token in request header", 401)
+        try:
+            decoded_token = jwt.decode(access_token, JWT_SECRET, algorithms=[JWT_ALGORITHM])
+            email = decoded_token.get('email')
+        except jwt.ExpiredSignatureError:
+            return invalid_response("access_token_expired", "Token has expired", 401)
+        except jwt.InvalidTokenError:
+            return invalid_response("access_token_invalid", "Invalid token", 401)
+
+        user = request.env['res.users'].sudo().search([('login', '=', email)], limit=1)
+        if not user:
+            return invalid_response("user_not_found", "User not found", 401)
+
+        request.session.uid = user.id
+        request.uid = user.id
+
+        return func(self, *args, **kwargs)
+
+    return wrap
 
 
 class AuthJWTController(http.Controller):
