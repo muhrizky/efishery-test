@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "73abb989-a45b-4787-81f6-2118d7482d1a",
+		"name": "efishery",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10909317"
+	},
+	"item": [
+		{
+			"name": "login",
+			"protocolProfileBehavior": {
+				"disableCookies": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"params\":\n    {\n        \"email\": \"demo\", \n        \"password\": \"demo\"\n    }\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{main_url}}auth_jwt/login",
+					"host": [
+						"{{main_url}}auth_jwt"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"params\":\n    {\n        \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlbW8iLCJyb2xlIjoidXNlciIsImV4cCI6MTcxNjU2Njk4OX0.R-zLvWuDRDb5OjGLkStLf5tOjGQKH0-t37mocerP19g\"\n    }\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{main_url}}auth_jwt/logout",
+					"host": [
+						"{{main_url}}auth_jwt"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Fish Price",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disableCookies": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlbW8iLCJyb2xlIjoidXNlciIsImV4cCI6MTcxNjYzMTk5OH0.3u3d54T3NLP8Y_B28HKFB3orJEDLDNzeIbUPPuqbNYU",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "token",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{main_url}}fetch-fish-price",
+					"host": [
+						"{{main_url}}fetch-fish-price"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Sale Order",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disableCookies": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlbW8iLCJyb2xlIjoidXNlciIsImV4cCI6MTcxNjY1MzA3N30.6xBMo3lOQIeVSZ0F4qqCmA3K1efTVOdw_og26QoReMA",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "token",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{main_url}}marketplace/sale_orders",
+					"host": [
+						"{{main_url}}marketplace"
+					],
+					"path": [
+						"sale_orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Order",
+			"protocolProfileBehavior": {
+				"disableCookies": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlbW8iLCJyb2xlIjoidXNlciIsImV4cCI6MTcxNjY1MzA3N30.6xBMo3lOQIeVSZ0F4qqCmA3K1efTVOdw_og26QoReMA",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "token",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"partner_id\": 1,\n    \"order_lines\": [\n        {\n            \"product_id\": 35,\n            \"quantity\": 2,\n            \"price_unit\": 100.0\n        },\n        {\n            \"product_id\": 30,\n            \"quantity\": 2,\n            \"price_unit\": 150.0\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{main_url}}marketplace/order",
+					"host": [
+						"{{main_url}}marketplace"
+					],
+					"path": [
+						"order"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
