@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Tree View -->
+        <record id="view_fish_price_tree" model="ir.ui.view">
+            <field name="name">Fish Price Tree</field>
+            <field name="model">fish.price</field>
+            <field name="arch" type="xml">
+                <tree string="Fish Prices">
+                    <field name="uuid"/>
+                    <field name="komoditas"/>
+                    <field name="area_provinsi"/>
+                    <field name="area_kota"/>
+                    <field name="size"/>
+                    <field name="price"/>
+                    <field name="price_usd"/>
+                    <field name="tgl_parsed"/>
+                    <field name="timestamp"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>
