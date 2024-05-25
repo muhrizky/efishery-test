@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  # Odoo service
+  odoo:
+    image: odoo:14.0
+    ports:
+      - "8069:8069" 
+    volumes:
+      - ./odoo-config:/etc/odoo
+      - ./odoo-addons:/opt/odoo/addons 
+      - ./odoo-addons:/opt/odoo/efishery 
+    depends_on:
+      - postgres 
+
+  # PostgreSQL database
+  postgres:
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_DB: efishery
+      POSTGRES_USER: odoo  
+      POSTGRES_PASSWORD: a  
+
+volumes:
+  odoo-config:  
+  odoo-addons: 
