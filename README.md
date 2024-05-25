@@ -17,7 +17,7 @@ This project includes several modules for user management, authentication, data 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/muhrizqi/efishery-test.git
+   git clone https://github.com/muhrizky/efishery-test.git
    cd project-name
    ```
    **Alternative**:
