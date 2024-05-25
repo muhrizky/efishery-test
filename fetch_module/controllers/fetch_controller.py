@@ -6,11 +6,10 @@ from datetime import datetime
 from efishery.auth_module.controlers.auth_controller import validate_token
 
 
-
 class FishPriceController(http.Controller):
 
-    @http.route('/fetch-fish-price', auth='public', type='http')
     @validate_token
+    @http.route('/fetch-fish-price', auth='public', type='http')
     def fetch_fish_price(self):
         RESOURCE_URL = 'https://stein.efishery.com/v1/storages/5e1edf521073e315924ceab4/list'
         try:
