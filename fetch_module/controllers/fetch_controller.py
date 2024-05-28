@@ -3,7 +3,7 @@ from odoo.http import request
 import requests
 import json
 from datetime import datetime
-from efishery.auth_module.controlers.auth_controller import validate_token
+from odoo.addons.auth_module.controlers.auth_controller import validate_token
 
 
 class FishPriceController(http.Controller):
