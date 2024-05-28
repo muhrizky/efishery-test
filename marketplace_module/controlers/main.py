@@ -1,6 +1,6 @@
 from odoo import http
 from odoo.http import request, Response
-from efishery.auth_module.controlers.auth_controller import validate_token
+from odoo.addons.auth_module.controlers.auth_controller import validate_token
 import json
 
 
