@@ -9,4 +9,9 @@
     'data': [],
     'installable': True,
     'application': True,
+    'external_dependencies': {
+        'python': [
+            'redis'
+        ],
+    }
 }

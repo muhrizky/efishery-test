@@ -90,7 +90,8 @@ The Marketplace Module provides functionality for order transactions up to payme
 #### Key Features
 
 * Endpoint for order transactions up to payment
-* Endpoint to fetch sale order list
+* Endpoint to fetch sale order
+  * Enhance integration with redis see documentation [here](https://medium.com/warung-pintar/warung-pintar-redis-integration-to-odoo-54de7396f5ca)
 * Invalid JWT token handling
 #### Demo
 [Watch the demo video](https://www.loom.com/share/1c8da9d5d9c24f04be3a148d13ef7882?sid=1a3ad476-8317-490d-bccc-de775eee94ec)
