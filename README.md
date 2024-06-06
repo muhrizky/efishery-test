@@ -12,6 +12,7 @@ This project includes several modules for user management, authentication, data 
   - [Auth Module](#auth-module)
   - [Fetch Module](#fetch-module)
   - [Marketplace Module](#marketplace-module)
+- [API Documentation](#apidoc)
 
 ## Installation
 
@@ -94,6 +95,10 @@ The Marketplace Module provides functionality for order transactions up to payme
 * Invalid JWT token handling
 #### Demo
 [Watch the demo video](https://www.loom.com/share/1c8da9d5d9c24f04be3a148d13ef7882?sid=1a3ad476-8317-490d-bccc-de775eee94ec)
+
+## API Documentation
+This API allows you to manage data efficiently.
+The Postman collection is included in this repository for your convenience; you can check the file `efishery_test.postman_collection.json`. For detailed online documentation and API endpoints, please visit the [eFishery Skill Test API Collection on Postman](https://documenter.getpostman.com/view/10909317/2sA3QzbUrF#2e5bfdee-6626-415b-b63f-2fed74753d67).
 
 ### Notes
 * Complete documentation and usage guides will be provided later.
