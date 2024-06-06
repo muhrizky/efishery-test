@@ -12,7 +12,7 @@ This project includes several modules for user management, authentication, data 
   - [Auth Module](#auth-module)
   - [Fetch Module](#fetch-module)
   - [Marketplace Module](#marketplace-module)
-- [API Documentation](#apidoc)
+- [API Documentation](#API-Documentation)
 
 ## Installation
 
